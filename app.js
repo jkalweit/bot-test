@@ -34,7 +34,7 @@ bot.add('/profile', [
 
 // Setup Restify Server
 var server = restify.createServer();
-server.post('/api/messages', bot.verifyBotFramework(), bot.listen());
-server.listen(process.env.port || 3978, function () {
+server.post('/bot/api/messages', bot.verifyBotFramework(), bot.listen());
+server.listen(process.env.port || 3978, '0.0.0.0', function () {
 	console.log('%s listening to %s', server.name, server.url); 
 });
